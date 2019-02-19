@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  php:
+    image: dnsape-php:1.1
+    volumes:
+      - /data/dnsape/www:/var/www/dnsape
+      - /data/log/dnsape.log:/usr/src/dnsape/storage/logs/laravel.log
+  web:
+    image: dnsape-web:1.1
+    volumes:
+      - /data/dnsape/www:/var/www/dnsape
+      - /data/certs:/etc/nginx/ssl
+    ports:
+      - mode: host
+        target: 443
+        published: 443
+        protocol: tcp
+      - mode: host
+        target: 80
+        published: 80
+        protocol: tcp
