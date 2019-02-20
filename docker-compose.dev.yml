@@ -1,12 +1,12 @@
 version: "3.7"
 services:
   php:
-    image: dnsape-php:1.1
+    image: dnsape-php:release-1.1
     volumes:
       - /data/dnsape/www:/var/www/dnsape
       - /data/log/dnsape.log:/usr/src/dnsape/storage/logs/laravel.log
   web:
-    image: dnsape-web:1.1
+    image: dnsape-web:release-1.1
     volumes:
       - /data/dnsape/www:/var/www/dnsape
       - /data/certs:/etc/nginx/ssl
