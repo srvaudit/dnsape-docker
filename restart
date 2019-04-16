@@ -1,0 +1,4 @@
+#!/bin/bash
+docker stack rm dnsape
+sleep 10
+docker stack deploy -c docker-compose.dev.yml dnsape
