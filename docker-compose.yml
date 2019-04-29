@@ -1,14 +1,14 @@
 version: "3.7"
 services:
   php:
-    image: srvaudit/dnsape-php:release-1.1.1
+    image: srvaudit/dnsape-php:release-1.1.3
     volumes:
       - /data/dnsape/www:/var/www/dnsape
       - /data/log/dnsape.log:/usr/src/dnsape/storage/logs/laravel.log
     env_file:
       - .env
   web:
-    image: srvaudit/dnsape-web:release-1.1.1
+    image: srvaudit/dnsape-web:release-1.1.3
     volumes:
       - /data/dnsape/www:/var/www/dnsape
       - /data/certs:/etc/nginx/ssl
